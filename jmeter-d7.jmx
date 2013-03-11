@@ -28,6 +28,21 @@
       <hashTree/>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Drupal-7" enabled="true">
         <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">dev.d7</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="user.name" elementType="Argument">
+            <stringProp name="Argument.name">user.name</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="user.pass" elementType="Argument">
+            <stringProp name="Argument.name">user.pass</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="urls.login" elementType="Argument">
             <stringProp name="Argument.name">urls.login</stringProp>
             <stringProp name="Argument.value">/user/login</stringProp>
@@ -40,12 +55,12 @@
           </elementProp>
           <elementProp name="urls.node_edit" elementType="Argument">
             <stringProp name="Argument.name">urls.node_edit</stringProp>
-            <stringProp name="Argument.value">/node/1/edit</stringProp>
+            <stringProp name="Argument.value">/node/2/edit</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="urls.node" elementType="Argument">
             <stringProp name="Argument.name">urls.node</stringProp>
-            <stringProp name="Argument.value">/node/1</stringProp>
+            <stringProp name="Argument.value">/node/2</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="urls.user" elementType="Argument">
@@ -53,24 +68,9 @@
             <stringProp name="Argument.value">/user</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="host" elementType="Argument">
-            <stringProp name="Argument.name">host</stringProp>
-            <stringProp name="Argument.value">dev.drupal7</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="meta.name" elementType="Argument">
             <stringProp name="Argument.name">meta.name</stringProp>
             <stringProp name="Argument.value">Drupal7</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="user.name" elementType="Argument">
-            <stringProp name="Argument.name">user.name</stringProp>
-            <stringProp name="Argument.value">editor</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="user.pass" elementType="Argument">
-            <stringProp name="Argument.name">user.pass</stringProp>
-            <stringProp name="Argument.value">editor</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="node_edit.forms_id" elementType="Argument">
@@ -90,7 +90,7 @@
           </elementProp>
           <elementProp name="html.format" elementType="Argument">
             <stringProp name="Argument.name">html.format</stringProp>
-            <stringProp name="Argument.value">html</stringProp>
+            <stringProp name="Argument.value">filtered_html</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="threads.anon" elementType="Argument">
@@ -624,6 +624,13 @@
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">body[und][0][format]</stringProp>
                 </elementProp>
+                <elementProp name="status" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">status</stringProp>
+                </elementProp>
               </collectionProp>
             </elementProp>
             <stringProp name="HTTPSampler.domain"></stringProp>
@@ -632,7 +639,7 @@
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/node/1/edit</stringProp>
+            <stringProp name="HTTPSampler.path">${urls.node_edit}</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -645,7 +652,7 @@
           <hashTree>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1822368646">ha estat actualitzat</stringProp>
+                <stringProp name="-1422824307">has been updated</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
